@@ -1,0 +1,14 @@
+// Mixin per animazione fade-in + discesa dall'alto
+@mixin fadeInDown($name, $duration: 1s, $fromY: -40px, $toY: 0, $delay: 0s) {
+  @keyframes #{$name} {
+    from {
+      opacity: 0;
+      transform: translateY($fromY);
+    }
+    to {
+      opacity: 1;
+      transform: translateY($toY);
+    }
+  }
+  animation: #{$name} $duration ease-out $delay both;
+}

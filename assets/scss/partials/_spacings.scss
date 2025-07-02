@@ -1,0 +1,25 @@
+// Mappa spaziature
+$spacings: (
+  sm: 0.5rem,
+  normal: 1rem,
+  md: 1.5rem,
+  lg: 2rem,
+  xl: 3rem,
+  xxl: 4rem,
+);
+
+// Generazione dinamica di classi per padding e margin
+@each $name, $value in $spacings {
+  .padding-block-#{$name} {
+    padding-block: $value !important;
+  }
+  .padding-inline-#{$name} {
+    padding-inline: $value !important;
+  }
+  .margin-block-#{$name} {
+    margin-block: $value !important;
+  }
+  .margin-inline-#{$name} {
+    margin-inline: $value !important;
+  }
+}

@@ -1,28 +1,121 @@
 <!DOCTYPE html>
 <!-- HTML -->
-<html lang="en">
+<html lang="it">
   <!-- HEAD -->
   <head>
     <!-- META -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- TITLE -->
-    <title>Document</title>
+    <title>Hero & Griglia SCSS</title>
     <!-- LINK CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/scss/style.css" />
     <!-- FONT -->
     <!-- ICONA -->
-    <link rel="icon" type="image/png" href="../assets/img/" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=48&h=48&fit=crop"
+    />
   </head>
   <!-- BODY -->
   <body>
-    <!-- HEADER -->
-    <header></header>
-    <!-- MAIN -->
-    <main></main>
+    <!-- HEADER: Navbar full width con logo e 3 link -->
+    <header class="navbar padding-block-normal">
+      <div class="logo">
+        <img
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=48&h=48&fit=crop"
+          alt="Logo"
+          style="
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            vertical-align: middle;
+          "
+        />
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Servizi</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- MAIN: Hero section -->
+    <main>
+      <section
+        class="hero padding-block-xl"
+        style="background: #640fc5; color: #f4f4f4"
+      >
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title margin-block-normal">
+              Benvenuto nella nostra piattaforma
+            </h1>
+            <p class="margin-block-normal">
+              Scopri i nostri servizi e le opportunità che offriamo per la tua
+              crescita digitale.
+            </p>
+            <div class="hero-buttons margin-block-normal">
+              <button class="btn-primary">Scopri di più</button>
+              <button class="btn-secondary">Accedi</button>
+              <button class="btn-tertiary">Contattaci</button>
+            </div>
+          </div>
+          <div class="hero-image">
+            <!-- Immagine hero (sostituisci src con la tua immagine) -->
+            <img
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+              alt="Hero"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Griglia di 4 elementi -->
+      <section class="grid-section padding-block-lg">
+        <div class="grid">
+          <div class="grid-item">
+            <img
+              src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308"
+              alt="Elemento 1"
+            />
+            <h3>Elemento 1</h3>
+            <p>Descrizione breve dell'elemento 1.</p>
+          </div>
+          <div class="grid-item">
+            <img
+              src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+              alt="Elemento 2"
+            />
+            <h3>Elemento 2</h3>
+            <p>Descrizione breve dell'elemento 2.</p>
+          </div>
+          <div class="grid-item">
+            <img
+              src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca"
+              alt="Elemento 3"
+            />
+            <h3>Elemento 3</h3>
+            <p>Descrizione breve dell'elemento 3.</p>
+          </div>
+          <div class="grid-item">
+            <img
+              src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91"
+              alt="Elemento 4"
+            />
+            <h3>Elemento 4</h3>
+            <p>Descrizione breve dell'elemento 4.</p>
+          </div>
+        </div>
+      </section>
+    </main>
     <!-- FOOTER -->
-    <footer></footer>
+    <footer class="padding-block-normal">
+      02/07/2025 - Un rigraziamento speciale al muckup di Stefano su Paint
+    </footer>
+    <!-- LINK JS -->
+    <script src="../script/script.js"></script>
   </body>
-  <!-- LINK JS -->
-  <script src="../script/script.js"></script>
 </html>

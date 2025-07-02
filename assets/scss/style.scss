@@ -1,2 +1,214 @@
-// PARTIAL FOGLIO DI RESET
-@import "./partials/reset";
+// Import dei partials principali
+@import "partials/reset";
+@import "partials/colors";
+@import "partials/fonts";
+@import "partials/spacings";
+@import "partials/buttons";
+@import "partials/mixins";
+@import "partials/animations";
+
+// =====================
+// STILI NAVBAR
+// =====================
+.navbar {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $color-white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  .logo {
+    font-family: $font-main;
+    font-size: $font-size-xl;
+    font-weight: bold;
+    color: $color-bg-hero;
+    padding-left: 2rem;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding-right: 2rem;
+    li a {
+      color: $color-bg-hero;
+      text-decoration: none;
+      font-size: $font-size-lg;
+      font-family: $font-main;
+      transition: color 0.2s;
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+// =====================
+// STILI HERO SECTION
+// =====================
+.hero {
+  width: 100vw;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  background: $color-bg-hero;
+  color: $color-text;
+  .hero-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    @media (max-width: 900px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  .hero-text {
+    flex: 1;
+    .hero-title {
+      @include title-big; // Applica il mixin per il titolo grande
+      @include fadeInDown(hero-title, 1s, -40px, 0, 0.1s); // Animazione titolo
+    }
+    p {
+      font-size: $font-size-lg;
+      margin-bottom: 1.5rem;
+      @include fadeInDown(
+        hero-desc,
+        1.2s,
+        -30px,
+        0,
+        0.3s
+      ); // Animazione descrizione
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1.5rem;
+      @include fadeInDown(
+        hero-btns,
+        1.4s,
+        -20px,
+        0,
+        0.5s
+      ); // Animazione bottoni
+      @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+  .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 320px;
+      max-width: 90vw;
+      @include floating(
+        2em,
+        0 12px 32px rgba(0, 0, 0, 0.18),
+        3px solid $color-text
+      ); // Effetto sollevato con bordo chiaro
+      @include fadeInDown(
+        hero-img,
+        1.6s,
+        -50px,
+        0,
+        0.7s
+      ); // Animazione immagine
+    }
+  }
+}
+
+// =====================
+// STILI GRIGLIA
+// =====================
+.grid-section {
+  background: $color-white;
+  .grid {
+    @include grid(4); // Griglia dinamica con 4 elementi per riga
+    @media (max-width: 900px) {
+      @include grid(2);
+    }
+    @media (max-width: 600px) {
+      @include grid(1);
+    }
+  }
+  .grid-item {
+    background: $color-white;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-radius: 1em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    &:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
+    }
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border-radius: 50%;
+      @include floating(
+        50%,
+        0 2px 8px rgba(0, 0, 0, 0.1)
+      ); // Effetto sollevato più leggero, senza bordo
+    }
+    h3 {
+      font-size: $font-size-xl;
+      color: $color-bg-hero;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: $font-size-base;
+      color: $color-dark;
+    }
+  }
+}
+
+// =====================
+// RESPONSIVE
+// =====================
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    .nav-links {
+      gap: 1rem;
+    }
+  }
+  .hero-content {
+    gap: 1.5rem;
+  }
+}
+
+// Rendo il body un flex container per posizionare il footer in fondo
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+// Footer sempre centrato e a fondo pagina
+footer {
+  background: $color-bg-hero;
+  color: $color-text;
+  text-align: center;
+  font-size: $font-size-base;
+  padding: 1.5rem 0;
+  margin-top: auto;
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+}
